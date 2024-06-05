@@ -1,9 +1,10 @@
-import { Providers } from './providers.jsx'
+import { Providers } from './providers.jsx';
+import styles from "./page.module.css"
 
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body>
+      <body className={styles.bodystyle}>
         <Providers>{children}</Providers>
       </body>
     </html>
