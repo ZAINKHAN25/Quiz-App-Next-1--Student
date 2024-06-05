@@ -1,11 +1,19 @@
+"use client"
+
 import { Box, Image, Text } from '@chakra-ui/react';
-import React from 'react';
+import React, { useState } from 'react';
+
+import { GoTriangleDown } from "react-icons/go";
 
 import QuizLogoImg from "../../assests/quiz-logo.png";
 import colorThemes from "../../Color.js";
+import NavbarComponent from "./NavbarComponent.jsx"
 
 
 function Navbar() {
+
+    let [profileBadgeClicked, setProfileBadgeClicked] = useState(false);
+
     return (
         <Box
             width={"100vw"}
@@ -14,13 +22,16 @@ function Navbar() {
             alignItems={"center"}
             bg={colorThemes.lightColor.firstColor}
             px={"10vw"}
-            py={4}
+            py={3}
             boxShadow={"1px 1px 10px rgba( 0, 0, 0, 30%)"}
+            position={"relative"}
         >
+
             <Image
                 src={QuizLogoImg.src}
                 w={"80px"}
             />
+
             <Box
                 display={"flex"}
                 justifyContent={"center"}
@@ -33,14 +44,34 @@ function Navbar() {
                     h={"30px"}
                     borderRadius={100}
                 />
-                <Text
-                    fontSize={20}
+                <Box
+                    as='span'
                     ms={2}
-                    
+                    color={colorThemes.lightColor.secondColor}
+                    display={"flex"}
+                    alignItems={"center"}
+                    cursor={"pointer"}
+                    onClick={() => {
+                        setProfileBadgeClicked(!profileBadgeClicked)
+                    }}
                 >
-                    Zain
-                </Text>
+                    <Text
+                        me={1}
+                        fontSize={17}
+                        fontWeight={"600"}
+                    >
+                        Lorem
+                    </Text>
+                    <GoTriangleDown
+                        fontSize={14}
+                    />
+                </Box>
+
+                <NavbarComponent
+                    profileBadgeClicked={profileBadgeClicked}
+                />
             </Box>
+
         </Box>
     )
 }
