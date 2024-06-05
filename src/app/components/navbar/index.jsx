@@ -60,7 +60,7 @@ function Navbar() {
                         fontSize={17}
                         fontWeight={"600"}
                     >
-                        Lorem
+                        Zain
                     </Text>
                     <GoTriangleDown
                         fontSize={14}
