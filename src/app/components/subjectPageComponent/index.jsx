@@ -1,12 +1,12 @@
 import React from "react";
 
-import { Box, Heading } from '@chakra-ui/react';
+import { Box, Heading, Text } from '@chakra-ui/react';
 
 
 import dummyData from "../../dummyData.js";
 import colorThemes from "../../Color.js";
 
-function subjectsPageComponent() {
+function SubjectsPageComponent() {
     return (
         <Box
             width={"80vw"}
@@ -39,4 +39,4 @@ function subjectsPageComponent() {
     )
 }
 
-export default subjectsPageComponent
+export default SubjectsPageComponent;

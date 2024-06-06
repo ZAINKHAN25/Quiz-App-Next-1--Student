@@ -1,8 +1,8 @@
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Heading, Text } from "@chakra-ui/react";
 
 import Navbar from "../components/navbar/index.jsx";
-import subjectsPageComponent from "../components/subjectPageComponent/index.jsx"
-import dummyData from "../DummyData.js";
+import SubjectsPageComponent from "../components/subjectPageComponent/index.jsx"
+import dummyData from "../dummyData.js";
 
 export default function Page() {
 
@@ -16,10 +16,11 @@ export default function Page() {
       alignItems={"center"}
     >
       <Navbar />
-      <subjectsPageComponent />
+      <SubjectsPageComponent />
 
       <Accordion
         allowToggle
+        width={"80vw"}
       >
         {
           subjectsDe.map((x, i) => {
@@ -41,14 +42,18 @@ export default function Page() {
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
-                <AccordionPanel
-                  pb={4}
-                >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                  commodo consequat.
-                </AccordionPanel>
+                {
+                  x.subjects.map((x, i) => {
+                    return (
+                      <AccordionPanel
+                        pb={4}
+                        key={i}
+                      >
+                        {x.subSubjectName}
+                      </AccordionPanel>
+                    )
+                  })
+                }
               </AccordionItem>
             )
           })
