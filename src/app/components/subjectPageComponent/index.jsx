@@ -3,7 +3,7 @@ import React from "react";
 import { Box, Heading, Text } from '@chakra-ui/react';
 
 
-import dummyData from "../../dummyData.js";
+import dummyData from "../../DummyData.js";
 import colorThemes from "../../Color.js";
 
 function SubjectsPageComponent() {
@@ -31,7 +31,7 @@ function SubjectsPageComponent() {
                     fontWeight={500}
                     ms={2}
                 >
-                    ({dummyData[1].subjects.length} Subjects)
+                    ({dummyData[1].classesOfQuiz.length} Subjects)
                 </Text>
             </Box>
         </Box>

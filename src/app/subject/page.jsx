@@ -1,12 +1,14 @@
+"use client"
+
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Heading, Text } from "@chakra-ui/react";
 
 import Navbar from "../components/navbar/index.jsx";
 import SubjectsPageComponent from "../components/subjectPageComponent/index.jsx"
-import dummyData from "../dummyData.js";
+import dummyData from "../DummyData.js";
 
 export default function Page() {
 
-  let subjectsDe = dummyData[1].subjects;
+  let subjectsDe = dummyData[1].classesOfQuiz;
 
   return (
     <Box
