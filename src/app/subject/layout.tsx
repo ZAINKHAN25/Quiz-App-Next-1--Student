@@ -7,5 +7,5 @@ export default function RootLayout({ children }) {
 }
 
 export const metadata = {
-  title: 'Login Page',
+  title: 'Subject Page',
 }

@@ -6,7 +6,7 @@ import colorThemes from '../../Color.js';
 function WelcomeHomeTx() {
     return (
         <Box
-            width={"90vw"}
+            width={"80vw"}
             pt={8}
             pb={5}
             borderBottom={"1px solid rgba( 0, 0, 0, 10%)"}
