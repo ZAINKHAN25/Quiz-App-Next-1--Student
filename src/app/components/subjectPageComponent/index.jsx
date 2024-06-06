@@ -24,14 +24,14 @@ function SubjectsPageComponent() {
                     fontSize={45}
                     fontWeight={300}
                 >
-                    {dummyData[1].quizName}
+                    {dummyData[0].classNameOFQuiz}
                 </Heading>
                 <Text
                     fontSize={20}
                     fontWeight={500}
                     ms={2}
                 >
-                    ({dummyData[1].classesOfQuiz.length} Subjects)
+                    ({dummyData[0].classesOfQuiz.length} Subjects)
                 </Text>
             </Box>
         </Box>

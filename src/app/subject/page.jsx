@@ -1,14 +1,11 @@
-"use client"
-
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Heading, Text } from "@chakra-ui/react";
+import React from 'react';
+import { Box } from "@chakra-ui/react";
 
 import Navbar from "../components/navbar/index.jsx";
 import SubjectsPageComponent from "../components/subjectPageComponent/index.jsx"
-import dummyData from "../DummyData.js";
+import AccordationComponentSubject from "../components/AccordationComponentSubject/index.jsx"
 
-export default function Page() {
-
-  let subjectsDe = dummyData[1].classesOfQuiz;
+const Page = () => {
 
   return (
     <Box
@@ -19,49 +16,10 @@ export default function Page() {
     >
       <Navbar />
       <SubjectsPageComponent />
-
-      <Accordion
-        allowToggle
-        width={"80vw"}
-      >
-        {
-          subjectsDe.map((x, i) => {
-
-            return (
-
-              <AccordionItem
-                key={i}
-              >
-                <h2>
-                  <AccordionButton>
-                    <Box
-                      as='span'
-                      flex='1'
-                      textAlign='left'
-                    >
-                      {x.subjectName}
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                {
-                  x.subjects.map((x, i) => {
-                    return (
-                      <AccordionPanel
-                        pb={4}
-                        key={i}
-                      >
-                        {x.subSubjectName}
-                      </AccordionPanel>
-                    )
-                  })
-                }
-              </AccordionItem>
-            )
-          })
-        }
-      </Accordion>
-
+      <AccordationComponentSubject />
+      
     </Box>
-  )
+  );
 };
+
+export default Page;
