@@ -1,13 +1,13 @@
 const dummyData = [
     {
-        quizName: "Python",
-        subjects: [
+        classNameOFQuiz: "Python",
+        classesOfQuiz: [
             {
                 subjectName: "Html 5",
                 subjects: [
                     {
-                        subSubjectName: "Html Quiz 1",
-                        subSubjectsArr: [
+                        quizName: "Html Quiz 1",
+                        quizArr: [
                             {
                                 question: "Inside which HTML element do we put the JavaScript?",
                                 answers: [
@@ -30,22 +30,22 @@ const dummyData = [
                                 correctAnswer: 0
                             },
                         ],
-                        subSubjectTime: 30,
-                        subSubjectPassingCourse: 70
+                        quizTime: 30,
+                        quizSubjectPassingCourse: 70
                     }
                 ]
             }
         ]
     },
     {
-        quizName: "Web and mobile hybrid app develpment",
-        subjects: [
+        classNameOFQuiz: "Web And App Development",
+        classesOfQuiz: [
             {
                 subjectName: "Html 5",
                 subjects: [
                     {
-                        subSubjectName: "Html Quiz 1",
-                        subSubjectsArr: [
+                        quizName: "Html Quiz 1",
+                        quizArr: [
                             {
                                 question: "Inside which HTML element do we put the JavaScript?",
                                 answers: [
@@ -68,8 +68,8 @@ const dummyData = [
                                 correctAnswer: 0
                             },
                         ],
-                        subSubjectTime: 30,
-                        subSubjectPassingCourse: 70
+                        quizTime: 30,
+                        quizSubjectPassingCourse: 70
                     }
                 ]
             }

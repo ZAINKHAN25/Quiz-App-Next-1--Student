@@ -33,14 +33,14 @@ function HomePageComponent() {
                                 fontSize={24}
                                 fontWeight={500}
                             >
-                                {x.quizName}
+                                {x.classNameOFQuiz}
                             </Heading>
                             <Text
                                 color={"rgba( 0, 0, 0, 60%)"}
                                 fontWeight={600}
                                 mt={2}
                             >
-                                {x.subjects.length} Subjects
+                                {x.classesOfQuiz.length} Subjects
                             </Text>
 
                             <Box
