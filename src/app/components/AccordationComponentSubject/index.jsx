@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from 'react';
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box } from '@chakra-ui/react';
 
@@ -50,6 +52,7 @@ function AccordationComponentSubject() {
                                 <Box
                                     onClick={() => handleQuizClick(quiz.quizName)}
                                     width={"100%"}
+                                    cursor={"pointer"}
                                     bg={"rgba(0, 0, 0, 5%)"}
                                     _hover={{ bg: "rgba(0, 0, 0, 10%)" }}
                                     p={4}
