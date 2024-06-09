@@ -1,10 +1,13 @@
-import { Box, Heading, Table, TableContainer, Tbody, Th, Thead, Tr } from "@chakra-ui/react";
+"use client"
+
+import { Box, Heading, Table, TableContainer, Tbody, Th, Thead, Tr, Td } from "@chakra-ui/react";
 
 import Navbar from "../components/navbar/index.jsx";
 import colorThemes from "../Color.js";
-import { ProfileData, ProfileHeadingArr } from './ProfileData.js';
+import { ProfileData, ProfileHeadingArr, ArrOfProfileSub } from './ProfileData.js';
 
 export default function Page() {
+
   return (
     <Box
       display={"flex"}
@@ -14,19 +17,18 @@ export default function Page() {
     >
       <Navbar />
       <Box
-        width={"85
-        
-        
-        vw"}
+        width={"85vw"}
         pt={8}
         pb={5}
-        borderBottom={"1px solid rgba( 0, 0, 0, 10%)"}
         mb={3}
       >
         <Heading
           color={colorThemes.lightColor.secondColor}
           fontWeight={300}
+          borderBottom={"1px solid rgba( 0, 0, 0, 10%)"}
           fontSize={45}
+          pb={5}
+          mb={3}
         >
           Results
         </Heading>
@@ -34,50 +36,40 @@ export default function Page() {
         {/* Table Content */}
         <TableContainer
           my={15}
-          border={"transparent"}
         >
-          <Table variant='simple' border={"transparent"}>
-            <Thead>
+          <Table>
+            <Thead
+              borderY={"2px solid rgba(0,0,0, 10%)"}
+            >
               <Tr>
                 {
-                  ProfileHeadingArr.map((x, i) => {
-                    return (
-                      <Th
-                        key={i}
-                        color={colorThemes.lightColor.secondColor}
-                        fontSize={15}
-                      >
-                        {x}
-                      </Th>
-                    )
-                  })
+                  ProfileHeadingArr.map((heading, index) => (
+                    <Th
+                      key={index}
+                      textTransform={"capitalize"}
+                      color={colorThemes.lightColor.secondColor}
+                      fontSize={16}
+                    >
+                      {heading}
+                    </Th>
+                  ))
                 }
               </Tr>
             </Thead>
             <Tbody>
-
               {
-                ProfileData.map((x, i) => {
-                  return (
-                    <Tr
-                      key={i}
-                    >
-                      <Th fontSize={14} fontWeight={400}>{i + 1}</Th>
-                      <Th fontSize={14} fontWeight={400}>{x.quizdate}</Th>
-                      <Th fontSize={14} fontWeight={400}>{x.courseName}</Th>
-                      <Th fontSize={14} fontWeight={400}>{x.batch}</Th>
-                      <Th fontSize={14} fontWeight={400}>{x.quizsubject}</Th>
-                      <Th fontSize={14} fontWeight={400}>{x.quizName}</Th>
-                      <Th fontSize={14} fontWeight={400}>{x.quizScore}</Th>
-                    </Tr>
-                  )
-                })
-              }
+                ProfileData.map((profile, index) => (
+                  <Tr key={index} textTransform={"capitalize"}>
+                    <Td>{index + 1}</Td>
+                    {ArrOfProfileSub.map((key, i) => (
+                      <Td key={i}>{profile[key]}</Td>
+                    ))}
+                  </Tr>
+                ))}
             </Tbody>
           </Table>
         </TableContainer>
-
       </Box>
-    </Box>
-  )
-}
+    </Box >
+  );
+};
