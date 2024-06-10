@@ -25,4 +25,6 @@ const ProfileHeadingArr = [
     "#", "Date", "Course", "Batch", "Subject", "Quiz", "Score"
 ];
 
+
+
 export { ProfileData, ProfileHeadingArr, ArrOfProfileSub };
