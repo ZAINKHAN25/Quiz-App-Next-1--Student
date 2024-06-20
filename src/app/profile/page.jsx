@@ -61,9 +61,11 @@ export default function Page() {
                 ProfileData.map((profile, index) => (
                   <Tr key={index} textTransform={"capitalize"}>
                     <Td>{index + 1}</Td>
-                    {ArrOfProfileSub.map((key, i) => (
-                      <Td key={i}>{profile[key]}</Td>
-                    ))}
+                    {
+                      ArrOfProfileSub.map((key, i) => (
+                        <Td key={i}>{profile[key]}</Td>
+                      ))
+                    }
                   </Tr>
                 ))}
             </Tbody>
@@ -73,3 +75,4 @@ export default function Page() {
     </Box >
   );
 };
+
