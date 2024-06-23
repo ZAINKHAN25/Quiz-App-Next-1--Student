@@ -8,13 +8,17 @@ export default function Page() {
   const initialQuizTime = dummyData[0].classesOfQuiz[0].subjects[0].quizTime;
   const [quizSeconds, setQuizSeconds] = useState(initialQuizTime * 60);
 
+
+
   useEffect(() => {
+
     const interval = setInterval(() => {
       if (quizSeconds > 0) {
         setQuizSeconds((prevSeconds) => prevSeconds - 1);
       } else {
         clearInterval(interval);
       }
+
     }, 1000);
     return () => clearInterval(interval);
   }, []);
