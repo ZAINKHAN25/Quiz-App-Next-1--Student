@@ -1,14 +1,12 @@
 "use client"
 
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Button, Heading, Text } from "@chakra-ui/react";
 import dummyData from "../DummyData.js";
 import { useState, useEffect } from "react";
 
 export default function Page() {
   const initialQuizTime = dummyData[0].classesOfQuiz[0].subjects[0].quizTime;
   const [quizSeconds, setQuizSeconds] = useState(initialQuizTime * 60);
-
-
 
   useEffect(() => {
 
@@ -19,7 +17,10 @@ export default function Page() {
         clearInterval(interval);
       }
 
+
+
     }, 1000);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -34,6 +35,28 @@ export default function Page() {
         <Text>{dummyData[0].classesOfQuiz[0].subjects[0].quizName}</Text>
         <Text>{formattedTime}</Text>
       </Box>
+      <Box>
+        <Heading>{dummyData[0].classesOfQuiz[0].subjects[0].quizArr[0].question}</Heading>
+        {
+          dummyData[0].classesOfQuiz[0].subjects[0].quizArr[0].answers.map((x, i) => {
+            return (
+              <Text
+                key={i}
+              >
+                {
+                  console.log(x)
+                }
+                {
+                  x
+                }
+              </Text>
+            )
+          })
+        }
+      </Box>
+      <Button>
+        Submit
+      </Button>
     </Box>
   );
 }
